@@ -1,7 +1,11 @@
-package com.example.catalogservice.service;
+package com.example.orderservice.service;
 
-import com.example.catalogservice.jpa.CatalogEntity;
+import com.example.orderservice.dto.OrderDto;
+import com.example.orderservice.jpa.OrderEntity;
+import org.springframework.stereotype.Service;
 
-public interface CatalogService {
-    public Iterable<CatalogEntity> getAllCatalogs();
+public interface OrderService {
+    OrderDto createOrder(OrderDto orderDetails);
+    OrderDto getOrderByOrderId(String orderId);
+    public Iterable<OrderEntity> getOrdersByUserId(String userId);
 }
